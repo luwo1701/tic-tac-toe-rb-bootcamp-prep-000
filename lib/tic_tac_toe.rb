@@ -40,25 +40,27 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
+  
   if valid_move?(board, index)
     move(board, index)
     display_board(board)
-  else
-    turn(board)
   end
   
 end
 
 # Define your play method below
 def play(board)
-    for i in 0..8
-      if !won?(board)
-        turn(board) 
-      else
-        puts "Congratulations #{winner(board)}"
-      end
-    end
   
+      if over?(board)
+        if draw?(board)
+          puts "Cat's Game!"
+        end
+        if won?(board)
+          puts "Congratulations #{winner(board)}!"
+        end      
+    else
+      turn(board)
+    end
 end
 
 def full?(board)
