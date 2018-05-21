@@ -29,11 +29,13 @@ def move(board, position, char)
 end
 
 def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
+  if board[location] != " " && board[location] != ""
+    return true
+  
 end
 
 def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
+  if index.between?(0,8) && !position_taken?(board, index)
 end
 
 def turn(board)
