@@ -39,7 +39,7 @@ def valid_move?(board, index)
 end
 
 def turn(board)
-  if !over(board)
+  if !over?(board)
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
@@ -54,7 +54,7 @@ end
 # Define your play method below
 def play(board)
   
-      if over?(board)
+     if over?(board)
         if draw?(board)
           puts "Cat's Game!"
         end
