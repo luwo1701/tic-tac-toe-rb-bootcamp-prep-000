@@ -39,6 +39,7 @@ def valid_move?(board, index)
 end
 
 def turn(board)
+=begin
   if !over?(board)
     puts "Please enter 1-9:"
     input = gets.strip
@@ -49,6 +50,7 @@ def turn(board)
       display_board(board)
     end
   end
+=end
 end
 
 # Define your play method below
