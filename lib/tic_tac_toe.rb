@@ -28,11 +28,11 @@ def move(board, position, char)
   return board
 end
 
-def position_taken?(board, location)
-  if board[location] != " " || board[location] != ""
-    return true
-  else
-    return false
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
+end
+
+
 end
 
 def valid_move?(board, index)
