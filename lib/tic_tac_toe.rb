@@ -29,9 +29,10 @@ def move(board, position, char)
 end
 
 def position_taken?(board, location)
-  if board[location] != " " && board[location] != ""
+  if board[location] != " " || board[location] != ""
     return true
-  
+  else
+    return false
 end
 
 def valid_move?(board, index)
