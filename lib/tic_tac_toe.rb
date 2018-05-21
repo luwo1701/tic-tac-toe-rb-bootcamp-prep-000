@@ -56,17 +56,15 @@ end
 
 # Define your play method below
 def play(board)
-    for i in 0..9
-       if over?(board)
-          if draw?(board)
-            puts "Cat's Game!"
-          end
-          if won?(board)
-            puts "Congratulations #{winner(board)}!"
-          end      
-      else
-        turn(board)
+      until over?(board)
+          play(board)
       end
+      if draw?(board)
+        puts "Cat's Game!"
+      end
+      if won?(board)
+        puts "Congratulations #{winner(board)}!"
+      end 
    end
 end
 
